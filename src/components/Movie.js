@@ -19,6 +19,11 @@ const Movie = (props) => {
             />
           )}
         </div>
+        <div className="card-content">
+          <p>
+            <a href="#">View Details</a>
+          </p>
+        </div>
       </div>
     </div>
   );
