@@ -11,6 +11,15 @@ class App extends Component {
     };
     this.apiKey = process.env.REACT_MOVIEAPP_API;
   }
+  handleSubmit = () => {
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`
+    )
+      .then((data) => data.json())
+      .then((data) => {});
+  };
+
+  handleChange = () => {};
   render() {
     return (
       <div className="App">
