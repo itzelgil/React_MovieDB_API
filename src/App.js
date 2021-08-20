@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
+import MovieInfo from "./components/MovieInfo";
 import MovieList from "./components/MovieList";
 import Nav from "./components/Nav";
 import Pags from "./components/Pags";
@@ -38,32 +39,44 @@ class App extends Component {
 
   nextPage = (pageNumber) => {
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}&page=${pageNumber}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}&language=en-US&page=${pageNumber}`
     )
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
-        this.setState({ movies: [...data.results], currentPage: pageNumber });
+        this.setState({
+          movies: [...data.results],
+          totalResults: data.total_results,
+          currentPage: pageNumber,
+        });
       });
   };
 
   viewMovieInfo = (id) => {
-    const filteredMovie = this.state.movies.filter((movie) => movie.id === id);
-
-    const newCurrentMovie = filteredMovie.length > 0 ? filteredMovie[0] : null;
+    let filteredMovie;
+    this.state.movies.forEach((movie, i) => {
+      if (movie.id == id) {
+        filteredMovie = movie;
+      }
+    });
 
     this.setState({ currentMovie: filteredMovie });
   };
 
-  closeMovieInfo = (id) => {
+  closeMovieInfo = () => {
     this.setState({ currentMovie: null });
+  };
+
+  popularMovies = () => {
+    const popularMovies =
+      "https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}&language=en-US&page=1";
   };
 
   render() {
     const numberPages = Math.floor(this.state.totalResults / 20);
     return (
-      <div className="App">
+      <div>
         <Nav />
+
         {this.state.currentMovie == null ? (
           <div>
             <SearchInput
@@ -81,7 +94,6 @@ class App extends Component {
             currentMovie={this.state.currentMovie}
           />
         )}
-
         {this.state.totalResults > 20 && this.state.currentMovie == null ? (
           <Pags
             pages={numberPages}
