@@ -1,8 +1,6 @@
-import React, { Component, useEffect } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import React, { Component } from "react";
 import MovieInfo from "./components/MovieInfo";
 import MovieList from "./components/MovieList";
-import Nav from "./components/Nav";
 import Pags from "./components/Pags";
 import logo from "./logo.png";
 import SearchInput from "./components/SearchInput";
