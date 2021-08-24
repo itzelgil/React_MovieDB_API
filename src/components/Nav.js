@@ -9,16 +9,9 @@ const Nav = (props) => {
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
-            <a
-              href="/Users/itzelgil/themoviedbapi/src/components/TopPopular.js"
-              action=""
-              onChange={props.handleSubmit}
-            >
-              Popular Movies
+            <a href="#" onClick={(e) => props.top10()}>
+              Top Rated Movies
             </a>
-          </li>
-          <li>
-            <a href="#">Top Rated Movies</a>
           </li>
         </ul>
       </div>

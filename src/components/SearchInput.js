@@ -13,7 +13,11 @@ const SearchInput = (props) => {
                 type="text"
                 onChange={props.handleChange}
               />
-              <Button onChange={props.handleSubmit} variant="outline-info">
+              <Button
+                onChange={props.handleSubmit}
+                variant="outline-info"
+                className="deep-purple lighten-2"
+              >
                 Search
               </Button>
             </div>
