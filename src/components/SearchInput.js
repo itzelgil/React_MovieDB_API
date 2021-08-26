@@ -5,18 +5,19 @@ const SearchInput = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <section className="col s4 offset-s4">
+        <section className="col s5 offset-s4">
           <form action="" onSubmit={props.handleSubmit}>
             <div className="input-field">
               <input
-                placeholder="Search movie"
+                placeholder="Search movie or serie by name, actor, genre or year"
                 type="text"
                 onChange={props.handleChange}
               />
               <Button
                 onChange={props.handleSubmit}
                 variant="outline-info"
-                className="deep-purple lighten-2"
+                className="cyan darken-2"
+                id="buttonSearch"
               >
                 Search
               </Button>

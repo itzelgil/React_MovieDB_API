@@ -4,3 +4,7 @@
   align-items: top;
   float: left;
 }
+
+#buttonSearch {
+  border-radius: 2 rem;
+}

@@ -19,14 +19,14 @@ const MovieInfo = (props) => {
                 className=""
                 src={`https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg`}
                 alt="Card image cap"
-                style={{ width: "100%", height: 360 }}
+                style={{ width: "100%", height: 360, borderRadius: 2 }}
               />
             ) : (
               <img
                 className=""
                 src={`http://image.tmdb.org/t/p/w185${props.currentMovie.poster_path}`}
                 alt="Card image"
-                style={{ width: "100%", height: 360 }}
+                style={{ width: "100%", height: 360, borderRadius: 2 }}
               />
             )}
           </div>
