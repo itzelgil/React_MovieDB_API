@@ -73,6 +73,7 @@ class App extends Component {
     this.state.movies.forEach((movie, i) => {
       if (movie.id === id) {
         filteredMovie = movie;
+      } else {
       }
     });
 
@@ -88,7 +89,7 @@ class App extends Component {
     return (
       <div>
         <nav className="cyan darken-2">
-          <div class="nav-wrapper">
+          <div className="nav-wrapper">
             <a
               href="/Users/itzelgil/themoviedbapi/src/App.js"
               class="brand-logo"
@@ -101,7 +102,7 @@ class App extends Component {
                 height="70"
               />
             </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <a href="/Users/itzelgil/themoviedbapi/src/App.js">Home</a>
               </li>
